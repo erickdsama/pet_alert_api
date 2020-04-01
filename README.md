@@ -6,9 +6,9 @@
 
 - docker-compose: https://docs.docker.com/compose/install/
 
-First your need clone your project.
+First you need clone your project.
 
-insisde of project directory run:
+inside of the project directory run:
 
 `docker-compose up`
 
