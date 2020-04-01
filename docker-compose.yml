@@ -1,0 +1,22 @@
+version: '3'
+services:
+    web:
+        env_file:
+            - .env_flask
+        build: .
+        ports:
+            - "5010:5001"
+        volumes:
+            - .:/flask
+        depends_on:
+            - psql
+        expose:
+            - 5010
+    psql:
+        image: postgres
+        ports:
+          - "5433:5432"
+        env_file:
+          - .env_psql
+        expose:
+          - 5440
