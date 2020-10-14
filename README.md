@@ -22,3 +22,8 @@ to see the log web
 to see the log psql
 
 `docker logs -f  psql_flask`
+
+
+### API DOC: 
+
+https://documenter.getpostman.com/view/4565987/TVRoZ7Bu
