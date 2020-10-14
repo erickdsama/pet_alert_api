@@ -26,4 +26,4 @@ to see the log psql
 
 ### API DOC: 
 
-https://documenter.getpostman.com/view/4565987/TVRoZ7Bu
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2ca13572e231ac7af54f)
