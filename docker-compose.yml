@@ -1,7 +1,7 @@
 version: '3'
 services:
     web:
-        container_name: "web_flask"
+        container_name: "api_pet_alert"
         env_file:
             - .env_flask
         build: .
@@ -14,8 +14,8 @@ services:
         expose:
             - 5000
     psql:
-        container_name: "psql_flask"
-        image: postgres
+        container_name: "psql_pet_alert"
+        image: postgis/postgis
         ports:
           - "5433:5433"
         env_file:

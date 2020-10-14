@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_mail import Mail
+from flask_marshmallow import Marshmallow
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 
@@ -10,6 +11,7 @@ mail = Mail()
 db = SQLAlchemy()
 moment = Moment()
 jwt_manager = JWTManager()
+ma = Marshmallow()
 
 
 def create_app(config_name):
@@ -20,8 +22,10 @@ def create_app(config_name):
     mail.init_app(app)
     moment.init_app(app)
     db.init_app(app)
-    jwt_manager.init_app(app)
-    from .api import api as api_blueprint
+    ma.init_app(app)
 
-    app.register_blueprint(api_blueprint, url_prefix="/api/v1")
+    jwt_manager.init_app(app)
+    from .api import api_bp
+
+    app.register_blueprint(api_bp)
     return app

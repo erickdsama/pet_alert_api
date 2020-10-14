@@ -29,7 +29,7 @@ class Config(object):
 class DevelopmentConfig(Config):
     DEBUG = True
     JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(days=15)
-    SQLALCHEMY_DATABASE_URI = "postgresql://project@psql/project"
+    SQLALCHEMY_DATABASE_URI = "postgresql://pet_alert:pet_alert$kulu21@psql/pet_alert"
 
 class TestingConfig(Config):
     TESTING = True
@@ -37,7 +37,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(days=7)
-    SQLALCHEMY_DATABASE_URI = "postgresql://project@psql/project"
+    SQLALCHEMY_DATABASE_URI = "postgresql://pet_alert:pet_alert$kulu21@psql/pet_alert"
 
 config = {
     'development': DevelopmentConfig,
