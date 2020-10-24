@@ -22,3 +22,8 @@ to see the log web
 to see the log psql
 
 `docker logs -f  psql_flask`
+
+
+### API DOC: 
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2ca13572e231ac7af54f)
