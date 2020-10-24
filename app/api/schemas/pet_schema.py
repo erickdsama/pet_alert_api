@@ -1,7 +1,7 @@
 from marshmallow_sqlalchemy import auto_field, SQLAlchemyAutoSchema
 
 from app import db
-from app.models.pet import Pet
+from app.models import Pet
 
 
 class PetSchema(SQLAlchemyAutoSchema):

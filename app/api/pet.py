@@ -4,7 +4,7 @@ from marshmallow import ValidationError
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 from app import db
-from app.api.schemas.PetSchema import PetSchema
+from app.api.schemas.pet_schema import PetSchema
 from app.models import Pet
 
 pet_schema = PetSchema()  # type: SQLAlchemyAutoSchema

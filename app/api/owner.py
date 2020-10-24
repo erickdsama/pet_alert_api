@@ -4,7 +4,7 @@ from marshmallow import ValidationError
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 from app import db
-from app.api.schemas.OwnerSchema import OwnerSchema
+from app.api.schemas import OwnerSchema
 from app.models import Owner
 
 owner_schema = OwnerSchema()  # type: SQLAlchemyAutoSchema

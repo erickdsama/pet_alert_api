@@ -20,3 +20,5 @@ GeoAlchemy2==0.8.4
 flask-restful==0.3.8
 marshmallow~=3.8.0
 alembic~=1.4.3
+shapely==1.7.1
+pyproj==2.6.1

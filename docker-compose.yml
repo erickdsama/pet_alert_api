@@ -17,7 +17,7 @@ services:
         container_name: "psql_pet_alert"
         image: postgis/postgis
         ports:
-          - "5433:5433"
+          - "5433:5432"
         env_file:
           - .env_psql
         expose:
