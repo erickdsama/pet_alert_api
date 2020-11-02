@@ -1,3 +1,7 @@
+import decimal
+import flask
+
+
 from flask import request, jsonify
 from flask_restful import Resource
 from sqlalchemy import func
@@ -11,13 +15,9 @@ from app.models import Alert
 alert_schema = AlertSchema()  # type: SQLAlchemyAutoSchema
 
 
+
+
 class AlertResource(Resource):
-
-    def get(self):
-        alerts = Alert.query.filter(func.ST_Distance(Alert.lost_point, 'POINT(-106.403360 31.666869)') < 500)
-        list_pets = alert_schema.dump(alerts, many=True)
-        return jsonify(list_pets)
-
     def post(self):
         data = request.get_json()
         try:
@@ -35,7 +35,7 @@ class AlertsResource(Resource):
         alerts = Alert.query.filter(
             func.ST_Distance(
                 Alert.lost_point, 'POINT({} {})'.format(lon, lat)
-            ) < 500)
+            ) < 100)
         list_pets = alert_schema.dump(alerts, many=True)
         return jsonify(list_pets)
 
