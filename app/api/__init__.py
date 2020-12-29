@@ -10,7 +10,7 @@ from app.api.pet import PetResource
 from app.api.owner import OwnerResource
 
 api_rest.add_resource(PetResource, '/pet/')
-api_rest.add_resource(OwnerResource, '/owner/')
+api_rest.add_resource(OwnerResource, '/owner', endpoint='owner')
 api_rest.add_resource(AlertResource, '/alert/')
 api_rest.add_resource(AlertsResource, '/alert/<string:lon>/<string:lat>/')
 
