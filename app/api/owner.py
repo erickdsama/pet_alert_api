@@ -27,17 +27,17 @@ class OwnerResource(Resource):
     def post(self):
         data = request.get_json()
         try:
-            pet_model = owner_schema.load(data, instance=Owner(), partial=True)
+            owner_model = owner_schema.load(data, instance=Owner(), partial=True)
         except ValidationError as e:
             return jsonify(e.messages)
         try:
-            db.session.add(pet_model)
+            db.session.add(owner_model)
             db.session.commit()
         except sqlalchemy.exc.IntegrityError:
-            print("error", data.get("email"))
+            print("errdsadsadsaor", data.get("email"))
             owner = Owner.query.filter(Owner.email == data.get("email")).first()
             owner_sc = owner_schema.dump(owner, many=False)
             print("skdjskdjksjdk own", owner_sc, owner)
             return owner_schema.dump(owner_sc)
 
-        return owner_schema.dump(pet_model)
+        return owner_schema.dump(owner_model)
