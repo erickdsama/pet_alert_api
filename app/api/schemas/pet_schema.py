@@ -5,7 +5,7 @@ from sqlalchemy import DECIMAL
 
 
 from app import db
-from app.api.schemas import OwnerSchema
+from app.api.schemas.owner_schema import OwnerSchema
 from app.models import Pet
 
 
