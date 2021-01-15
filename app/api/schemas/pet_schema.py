@@ -20,6 +20,7 @@ class PetSchema(SQLAlchemyAutoSchema):
         model = Pet
         sqla_session = db.session
         load_instance = True
+        include_fk = True
 
     id = auto_field()
     owner = fields.Nested(OwnerSchema)
