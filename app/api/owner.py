@@ -36,10 +36,7 @@ class OwnerResource(Resource):
         except sqlalchemy.exc.IntegrityError:
             print("errdsadsadsaor", data.get("email"))
             try:
-                owner = Owner.query.filter(Owner.email == data.get("email")).first()
-                owner_sc = owner_schema.dump(owner, many=False)
-                print("skdjskdjksjdk own", owner_sc, owner)
-                return owner_schema.dump(owner_sc)
+                owner_model = Owner.query.filter(Owner.email == data.get("email")).first()
             except Exception as e:
                 print("ERRROR", e)
 
