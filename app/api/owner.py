@@ -35,7 +35,7 @@ class OwnerResource(Resource):
             db.session.commit()
         except sqlalchemy.exc.IntegrityError:
             print("error", data.get("email"))
-            owner = Owner.query.filter_by(Owner.email == data.get("email")).first()
+            owner = Owner.query.filter(Owner.email == data.get("email")).first()
             owner_sc = owner_schema.dump(owner, many=False)
             print("skdjskdjksjdk own", owner_sc, owner)
             return owner_schema.dump(owner_sc)
