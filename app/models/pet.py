@@ -24,7 +24,7 @@ class Pet(db.Model):
     active = Column(BOOLEAN, default=False)
     date_registered = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
-    pet = relationship("Owner")
+    owner = relationship("Owner")
 
 
 

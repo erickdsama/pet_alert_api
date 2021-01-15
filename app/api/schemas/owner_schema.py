@@ -9,5 +9,6 @@ class OwnerSchema(SQLAlchemyAutoSchema):
         model = Owner
         sqla_session = db.session
         load_instance = True
+        include_fk = True
 
     id = auto_field()
