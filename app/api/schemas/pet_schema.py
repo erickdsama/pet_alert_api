@@ -5,6 +5,7 @@ from sqlalchemy import DECIMAL
 
 
 from app import db
+from app.api.schemas import OwnerSchema
 from app.models import Pet
 
 
@@ -21,3 +22,5 @@ class PetSchema(SQLAlchemyAutoSchema):
         load_instance = True
 
     id = auto_field()
+    owner = fields.Nested(OwnerSchema)
+
