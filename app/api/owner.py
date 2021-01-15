@@ -34,6 +34,7 @@ class OwnerResource(Resource):
             db.session.add(owner_model)
             db.session.commit()
         except sqlalchemy.exc.IntegrityError:
+            db.session.rollback()
             print("errdsadsadsaor", data.get("email"))
             try:
                 owner_model = Owner.query.filter(Owner.email == data.get("email")).first()
