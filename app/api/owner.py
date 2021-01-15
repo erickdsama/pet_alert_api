@@ -1,3 +1,4 @@
+import sqlalchemy
 from flask import request, jsonify
 from flask_restful import Resource, reqparse
 from marshmallow import ValidationError
@@ -29,6 +30,13 @@ class OwnerResource(Resource):
             pet_model = owner_schema.load(data, instance=Owner(), partial=True)
         except ValidationError as e:
             return jsonify(e.messages)
-        db.session.add(pet_model)
-        db.session.commit()
+        try:
+            db.session.add(pet_model)
+            db.session.commit()
+        except sqlalchemy.exc.IntegrityError:
+            print("error")
+            owner = Owner.query.filter(Owner.email == data.get("email"))
+            owner_sc = owner_schema.dump(owner, many=False)
+            return owner_schema.dump(owner_sc)
+
         return owner_schema.dump(pet_model)
